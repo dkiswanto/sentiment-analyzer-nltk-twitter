@@ -94,5 +94,7 @@ using python built in .lower() method
 
 
 ### Screenshoot
-![Alt text](/readme_files/screenshot1.png?raw=true "Optional Title")
 ![Alt text](/readme_files/screenshot2.png?raw=true "Optional Title")
+
+![Alt text](/readme_files/screenshot1.png?raw=true "Optional Title")
+
