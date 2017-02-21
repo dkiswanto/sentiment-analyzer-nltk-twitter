@@ -4,9 +4,9 @@ from TwitterSearch import *
 def get_tweet(keywords, limit=10, lang='en'):
     try:
         search_order = TwitterSearchOrder()
-        search_order.set_keywords(keywords) #keywords search tweet
+        search_order.set_keywords([keywords]) #keywords search tweet
         search_order.set_language(lang) #language search
-        search_order.set_include_entities(False) # and don't give us all those entity information
+        # search_order.set_include_entities(False) # and don't give us all those entity information
 
         # Leaked ini gak masalah udah gak pake twitter lagi soalnya wkwkw
         twitter_search = TwitterSearch(
@@ -19,13 +19,15 @@ def get_tweet(keywords, limit=10, lang='en'):
          # get tweet proccess
         count = 0
         tweets = []
+        print search_order
         for tweet in twitter_search.search_tweets_iterable(search_order):
 
             # content tweet
             # tweet['text']
 
             # tweets.append('@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text']))
-            tweets.append(tweet['text'])
+            data = (keywords, tweet['text'])
+            tweets.append(data)
 
             # print( '@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'] ) )
             if count == limit:
@@ -37,3 +39,5 @@ def get_tweet(keywords, limit=10, lang='en'):
     except TwitterSearchException as e:
         print(e)
         return None
+
+# print get_tweet("sby", 10)

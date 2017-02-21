@@ -7,11 +7,14 @@
         <div class="column">
             <h4 class="ui top attached header">Get Live from Twitter by Topic</h4>
             <div class="ui bottom attached segment center">
-                <div class="ui action fluid left icon input">
-                    <i class="search icon"></i>
-                    <input type="text" placeholder="Search...">
-                    <div class="ui teal button">Search</div>
-                </div>
+                <form action="" method="post">
+                    <div class="ui action fluid left icon input">
+                        {% csrf_token %}
+                        <i class="search icon"></i>
+                        <input type="text" name="topic-live" placeholder="Search...">
+                        <button type="submit" class="ui teal button">Search</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -35,7 +38,7 @@
     {% if feature != None %}
     <div class="row">
         <div class="column">
-            <div class="ui divided list attached attached">
+            <div class="ui divided list attached">
                 <div class="item">
                     {% if classify == 'positive' %}
                         <div class="ui large green horizontal label">{{ classify }}</div>
@@ -44,11 +47,34 @@
                     {% else %}
                         <div class="ui large horizontal label">{{ classify }}</div>
                     {% endif %}
-                    {{ feature }}
+                    {{ feature }} <br>
+                    {{ probability }}
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
+
+    {% if type != None %}
+        <div class="row">
+        <div class="column">
+            <div class="ui divided list attached">
+                {% for classify in data %}
+                    <div class="item">
+                        {% if classify.classify == 'positive' %}
+                            <div class="ui large green horizontal label">{{ classify.classify }}</div>
+                        {% elif classify.classify == 'negative' %}
+                            <div class="ui large red horizontal label">{{ classify.classify }}</div>
+                        {% else %}
+                            <div class="ui large horizontal label">{{ classify.classify }}</div>
+                        {% endif %}
+                        {{ classify.tweet_text }} <br>
+                        {{ classify.probability }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
     {% endif %}
 </div>
 

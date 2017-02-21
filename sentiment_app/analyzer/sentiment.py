@@ -27,6 +27,7 @@ classifier = NaiveBayesClassifier.train(data_set)
 
 
 def anaylze(tweet):
+    print tweet
     # tweet = ("topic", "tweet string post")
 
     # accuracy & informative features
@@ -41,11 +42,23 @@ def anaylze(tweet):
     # print feature
     # print classifier.classify(feature)
 
-    return {"feature": feature, "classify": classifier.classify(feature)}
+    dist_prob = classifier.prob_classify(feature)
+    labels = dist_prob.samples()
+    probability = {}
+    for label in labels:
+        probability[label] = round(dist_prob.prob(label),3)
+
+    probability = ''.join('{}: {}, '.format(key, val) for key, val in sorted(probability.items()))
+    return {
+        "feature": feature,
+        "classify": classifier.classify(feature),
+        "probability": probability,
+        "tweet_text" : tweet[1]
+    }
 
 
 def get_informative_features():
-    most_feature = classifier.show_most_informative_features(10)
+    most_feature = classifier.show_most_informative_features(30)
     labels = classifier._labels
     print most_feature
     return {"most_feature": most_feature, "labels": labels}
