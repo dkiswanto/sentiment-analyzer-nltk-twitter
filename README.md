@@ -1,18 +1,18 @@
 ## Simple Sentiment Analyzer with NLTK for Twitter
 
-#### Overview
+### Overview
 
-#### Tech Stack
+### Tech Stack
 * Python 2.7
 * NLTK (Natural Language Processing Toolkit) 3.2.2
 
-#### Web App Tech
+### Web App Tech
 * Django 1.9.11
 * Semantic UI
 * JQuery
 
-#### Step
-##### Pre-processing : 
+### Step
+#### Pre-processing : 
 * Tokenization
 
 Using : http://www.nltk.org/_modules/nltk/tokenize/casual.html#TweetTokenizer
@@ -38,6 +38,7 @@ False
 * Stemming Porter Algorithm
 
 Algorithm : http://snowball.tartarus.org/algorithms/porter/stemmer.html
+
 Simple Explanation : 
 
 **1.a** 
@@ -77,7 +78,7 @@ using python built in .lower() method
 "twitterposttweet"
 ```
 
-##### Extraksi Feature
+#### Extraksi Feature
 
 - Using Binary term, mirip term frequency, cuman ngitung ada atau tidak doang.
 
@@ -87,5 +88,5 @@ using python built in .lower() method
 {"apple": True, "product": True, "best": True, "forever": True}
 ```
 
-##### Classifier
+#### Classifier
 - Using NaiveBayesClassifier (NLTK),
