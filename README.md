@@ -5,6 +5,7 @@
 ### Tech Stack
 * Python 2.7
 * NLTK (Natural Language Processing Toolkit) 3.2.2
+* TwitterSearch
 
 ### Web App Tech
 * Django 1.9.11
