@@ -91,3 +91,8 @@ using python built in .lower() method
 
 #### Classifier
 - Using NaiveBayesClassifier (NLTK),
+
+
+### Screenshoot
+![Alt text](/readme_files/screenshot1.png?raw=true "Optional Title")
+![Alt text](/readme_files/screenshot2.png?raw=true "Optional Title")
