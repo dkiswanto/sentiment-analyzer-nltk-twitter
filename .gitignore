@@ -1,0 +1,3 @@
+bower_components/
+sentiment_app/static/bower_components
+*.pyc

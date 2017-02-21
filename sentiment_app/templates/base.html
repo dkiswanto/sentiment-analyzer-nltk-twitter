@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "bower_components/semantic/dist/semantic.min.css" %}">
+    <style type="text/css">
+        body {
+        background-color: #FFFFFF;
+        }
+        .ui.menu .item img.logo {
+        margin-right: 1.5em;
+        }
+        .main.container {
+        padding-top: 4em;
+        }
+        .wireframe {
+        margin-top: 2em;
+        }
+        .ui.footer.segment {
+        margin: 5em 0em 0em;
+        padding: 5em 0em;
+        }
+    </style>
+</head>
+<body>
+
+    {% include 'component/navbar.html' %}
+
+    <div class="ui main text container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "bower_components/semantic/dist/semantic.min.js" %}"></script>
+</body>
+</html>

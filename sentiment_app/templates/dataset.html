@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="ui stackable grid">
+
+    <div class="two column row">
+        <div class="column">
+            <a class="ui button fluid teal" href="?type=raw">RAW Dataset</a>
+        </div>
+        <div class="column">
+            <a class="ui button fluid teal" href="?type=preprocessing">After Pre-processing</a>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for data in dataset %}
+            {{ data }} </br>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{
+  "name": "sentiment-analysis-nltk",
+  "authors": [
+    "Kiswanto D <kiswanto.d21@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.2.8"
+  }
+}

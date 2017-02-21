@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="ui stackable grid">
+
+    <div class="row">
+        <div class="column">
+            <h4 class="ui top attached header">Get Live from Twitter by Topic</h4>
+            <div class="ui bottom attached segment center">
+                <div class="ui action fluid left icon input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="Search...">
+                    <div class="ui teal button">Search</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h4 class="ui top attached header">Input Tweet and Analyze</h4>
+            <div class="ui bottom attached segment">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="ui action fluid left input">
+                        <input type="text" name="topic" placeholder="Topic">
+                        <input type="text" name="tweet" placeholder="Make a Tweet here....">
+                        <button type="submit" class="ui teal button">Analyze</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% if feature != None %}
+    <div class="row">
+        <div class="column">
+            <div class="ui divided list attached attached">
+                <div class="item">
+                    {% if classify == 'positive' %}
+                        <div class="ui large green horizontal label">{{ classify }}</div>
+                    {% elif classify == 'negative' %}
+                        <div class="ui large red horizontal label">{{ classify }}</div>
+                    {% else %}
+                        <div class="ui large horizontal label">{{ classify }}</div>
+                    {% endif %}
+                    {{ feature }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
