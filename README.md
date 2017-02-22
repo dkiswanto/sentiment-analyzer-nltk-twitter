@@ -1,6 +1,9 @@
 ## Simple Sentiment Analyzer with NLTK for Twitter
 
-### Overview
+### Members
+* Dede Kiswanto (1301140171)
+* Muhammad Arif Kurniawan (1301144091)
+* Andi Ahmad Irfa (1103134385)
 
 ### Tech Stack
 * Python 2.7
