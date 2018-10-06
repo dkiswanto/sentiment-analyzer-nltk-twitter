@@ -79,7 +79,7 @@ using python built in .lower() method
 
 #### Extraksi Feature
 
-- Using Binary term, mirip term frequency, cuman ngitung ada atau tidak doang.
+- Using Binary term frequency.
 
 ```
 >>> tweet = ["apple", "product", "best", "use", "apple", "forever"]
